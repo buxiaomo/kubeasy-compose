@@ -62,8 +62,6 @@ services:
         image: docker.io/buxiaomo/kubeasy-worker:1.0
         networks:
             kubeasy:
-        ports:
-            - 5566:5566/tcp
         volumes:
             - ./data/worker:/etc/ssl/kubernetes
             - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
@@ -79,10 +77,10 @@ services:
             - ANSIBLE_NOCOLOR=True
             - REDIS_URL=redis://redis:6379
             - KUBEASY_URL=https://github.com/buxiaomo/kubeasy.git
-            - NEXUS_DOMAIN_NAME=http://172.16.2.11:8081
-            - NEXUS_REPOSITORY=kubeasy
-            - NEXUS_USERNAME=admin
-            - NEXUS_PASSWORD=admin
+            # - NEXUS_DOMAIN_NAME=http://172.16.2.11:8081
+            # - NEXUS_REPOSITORY=kubeasy
+            # - NEXUS_USERNAME=admin
+            # - NEXUS_PASSWORD=admin
         logging:
             driver: json-file
             options:
