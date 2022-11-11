@@ -1,0 +1,124 @@
+version: "3.8"
+services:
+    mysql:
+        image: mysql:5.7.20
+        networks:
+            kubeasy:
+        ports:
+            - 3306:3306/tcp
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=kubeasy
+            - MYSQL_USER=kubeasy
+            - MYSQL_PASSWORD=kubeasy
+        configs:
+            - source: mysql
+              target: /etc/mysql/mysql.conf.d/mysqld.cnf
+        volumes:
+            - ./data/mysql:/var/lib/mysql
+        deploy:
+            mode: replicated
+            replicas: 1
+            update_config:
+                order: stop-first
+                parallelism: 1
+                delay: 10s
+        logging:
+            driver: json-file
+            options:
+                max-file: "3"
+                max-size: 100m
+
+    redis:
+        image: redis:7.0.5-alpine
+        networks:
+            kubeasy:
+        ports:
+            - 6379:6379/tcp
+        volumes:
+            - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
+            - ./data/redis:/data
+        deploy:
+            mode: replicated
+            replicas: 1
+            update_config:
+                order: stop-first
+                parallelism: 1
+                delay: 10s
+        environment:
+            - TZ=Asia/Shanghai
+        healthcheck:
+            test: ["CMD-SHELL", "redis-cli ping || exit 1"]
+            interval: 10s
+            timeout: 5s
+            retries: 3
+        logging:
+            driver: json-file
+            options:
+                max-file: "3"
+                max-size: 100m
+
+    worker:
+        image: docker.io/buxiaomo/kubeasy-worker:1.0
+        networks:
+            kubeasy:
+        ports:
+            - 5566:5566/tcp
+        volumes:
+            - ./data/worker:/etc/ssl/kubernetes
+            - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
+        deploy:
+            mode: replicated
+            replicas: 1
+            update_config:
+                order: stop-first
+                parallelism: 1
+                delay: 10s
+        environment:
+            - TZ=Asia/Shanghai
+            - ANSIBLE_NOCOLOR=True
+            - REDIS_URL=redis://redis:6379
+            - KUBEASY_URL=https://github.com/buxiaomo/kubeasy.git
+            - NEXUS_DOMAIN_NAME=http://172.16.2.11:8081
+            - NEXUS_REPOSITORY=kubeasy
+            - NEXUS_USERNAME=admin
+            - NEXUS_PASSWORD=admin
+        logging:
+            driver: json-file
+            options:
+                max-file: "3"
+                max-size: 100m
+
+    api:
+        image: docker.io/buxiaomo/kubeasy-api:1.0
+        networks:
+            kubeasy:
+        ports:
+            - 8000:8000/tcp
+        volumes:
+            - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
+        deploy:
+            mode: replicated
+            replicas: 1
+            update_config:
+                order: stop-first
+                parallelism: 1
+                delay: 10s
+        environment:
+            - TZ=Asia/Shanghai
+            - CELERY_URL=redis:6379
+            - DB_TYPE=mysql
+            - DB_URL=kubeasy:kubeasy@tcp(mysql:3306)/kubeasy?charset=utf8mb4&parseTime=True&loc=Local
+        logging:
+            driver: json-file
+            options:
+                max-file: "3"
+                max-size: 100m
+
+configs:
+    mysql:
+        file: ./conf/mysqld.cnf
+
+networks:
+    kubeasy:
+        external: true
