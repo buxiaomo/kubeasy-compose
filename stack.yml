@@ -77,10 +77,8 @@ services:
             - ANSIBLE_NOCOLOR=True
             - REDIS_URL=redis://redis:6379
             - KUBEASY_URL=https://github.com/buxiaomo/kubeasy.git
-            # - NEXUS_DOMAIN_NAME=http://172.16.2.11:8081
-            # - NEXUS_REPOSITORY=kubeasy
-            # - NEXUS_USERNAME=admin
-            # - NEXUS_PASSWORD=admin
+            - NEXUS_DOMAIN_NAME=http://172.16.2.11:8000
+            - NEXUS_REPOSITORY=kubeasy
         logging:
             driver: json-file
             options:
@@ -91,8 +89,6 @@ services:
         image: docker.io/buxiaomo/kubeasy-api:1.0
         networks:
             kubeasy:
-        ports:
-            - 8000:8000/tcp
         volumes:
             - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
         deploy:
@@ -113,9 +109,57 @@ services:
                 max-file: "3"
                 max-size: 100m
 
+    artifact:
+        image: docker.io/buxiaomo/kubeasy-artifact:1.0
+        networks:
+            kubeasy:
+        volumes:
+            - ./data/artifact:/app/data
+            - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
+        deploy:
+            mode: replicated
+            replicas: 1
+            update_config:
+                order: stop-first
+                parallelism: 1
+                delay: 10s
+        environment:
+            - TZ=Asia/Shanghai
+        logging:
+            driver: json-file
+            options:
+                max-file: "3"
+                max-size: 100m
+
+    nginx:
+        image: nginx:1.23.2-alpine
+        networks:
+            kubeasy:
+        ports:
+            - 8000:80/tcp
+        configs:
+            - source: nginx
+              target: /etc/nginx/nginx.conf
+        deploy:
+            mode: replicated
+            replicas: 1
+            update_config:
+                order: stop-first
+                parallelism: 1
+                delay: 10s
+        environment:
+            - TZ=Asia/Shanghai
+        logging:
+            driver: json-file
+            options:
+                max-file: "3"
+                max-size: 100m
+
 configs:
     mysql:
         file: ./conf/mysqld.cnf
+    nginx:
+        file: ./conf/nginx.cnf
 
 networks:
     kubeasy:
