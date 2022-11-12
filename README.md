@@ -5,6 +5,6 @@
 curl -fsSL https://get.docker.com | sh
 docker swarm init
 docker network create --driver overlay kubeasy
-mkdir ./data/mysql ./data/redis ./data/artifact ./data/worker
+mkdir -p ./data/mysql ./data/redis ./data/artifact ./data/worker
 docker stack deploy -c stack.yml kubeasy --with-registry-auth
 ```
