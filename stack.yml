@@ -59,7 +59,7 @@ services:
                 max-size: 100m
 
     worker:
-        image: docker.io/buxiaomo/kubeasy-worker:1.0
+        image: docker.io/buxiaomo/kubeasy-worker:1.0-alpine
         networks:
             kubeasy:
         volumes:
@@ -75,7 +75,8 @@ services:
         environment:
             - TZ=Asia/Shanghai
             - ANSIBLE_NOCOLOR=True
-            - REDIS_URL=redis://redis:6379
+            - BROKER_URL=redis://redis:6379/0
+            - BACKEND_URL=redis://redis:6379/0
             - KUBEASY_URL=https://github.com/buxiaomo/kubeasy.git
             - NEXUS_DOMAIN_NAME=http://172.16.2.11:8000
             - NEXUS_REPOSITORY=kubeasy
@@ -100,9 +101,10 @@ services:
                 delay: 10s
         environment:
             - TZ=Asia/Shanghai
-            - CELERY_URL=redis:6379
             - DB_TYPE=mysql
             - DB_URL=kubeasy:kubeasy@tcp(mysql:3306)/kubeasy?charset=utf8mb4&parseTime=True&loc=Local
+            - BROKER_URL=redis://redis:6379/0
+            - BACKEND_URL=redis://redis:6379/0
         logging:
             driver: json-file
             options:
