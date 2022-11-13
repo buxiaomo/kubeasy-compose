@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"project\": \"kubeasy\",\n    \"env\": \"dev\",\n    \"version\": \"1.24.7\",\n    \"network\": \"cilium\",\n    \"runtime\": \"containerd\",\n    \"dnsDomain\": \"cluster.local\",\n    \"serviceSubnet\": \"10.96.0.0/12\",\n    \"podSubnet\": \"10.244.0.0/16\",\n    \"config_id\": 1\n}",
+							"raw": "{\n    \"project\": \"kubeasy\",\n    \"env\": \"uat\",\n    \"version\": \"1.24.7\",\n    \"network\": \"cilium\",\n    \"runtime\": \"containerd\",\n    \"dnsDomain\": \"cluster.local\",\n    \"serviceSubnet\": \"10.96.0.0/12\",\n    \"podSubnet\": \"10.244.0.0/16\",\n    \"config_id\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,15 +24,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/v1/kubeasy/cluster",
+							"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/cluster",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{GIN_HOST}}"
 							],
-							"port": "8000",
+							"port": "{{GIN_PORT}}",
 							"path": [
 								"v1",
 								"kubeasy",
@@ -42,13 +39,49 @@
 					},
 					"response": [
 						{
-							"name": "Add",
+							"name": "kubeasy-dev",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"project\": \"kubeasy\",\n    \"env\": \"dev\",\n    \"version\": \"1.24.7\",\n    \"network\": \"cilium\",\n    \"runtime\": \"containerd\",\n    \"dnsDomain\": \"cluster.local\",\n    \"serviceSubnet\": \"10.96.0.0/12\",\n    \"podSubnet\": \"10.244.0.0/16\",\n    \"config_id\": 1\n}",
+									"raw": "{\n    \"project\": \"kubeasy\",\n    \"env\": \"dev\",\n    \"version\": \"1.14.10\",\n    \"network\": \"flannel\",\n    \"runtime\": \"docker\",\n    \"dnsDomain\": \"cluster.local\",\n    \"serviceSubnet\": \"10.96.0.0/12\",\n    \"podSubnet\": \"10.244.0.0/16\",\n    \"config_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/v1/kubeasy/cluster",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"v1",
+										"kubeasy",
+										"cluster"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "kubeasy-uat",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"project\": \"kubeasy\",\n    \"env\": \"uat\",\n    \"version\": \"1.24.7\",\n    \"network\": \"cilium\",\n    \"runtime\": \"containerd\",\n    \"dnsDomain\": \"cluster.local\",\n    \"serviceSubnet\": \"10.96.0.0/12\",\n    \"podSubnet\": \"10.244.0.0/16\",\n    \"config_id\": 1\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -97,15 +130,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/v1/kubeasy/cluster",
+							"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/cluster",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{GIN_HOST}}"
 							],
-							"port": "8000",
+							"port": "{{GIN_PORT}}",
 							"path": [
 								"v1",
 								"kubeasy",
@@ -133,15 +163,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/v1/kubeasy/cluster?id=1",
+							"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/cluster?id=2",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{GIN_HOST}}"
 							],
-							"port": "8000",
+							"port": "{{GIN_PORT}}",
 							"path": [
 								"v1",
 								"kubeasy",
@@ -150,7 +177,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "2"
 								}
 							]
 						}
@@ -172,15 +199,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/v1/kubeasy/cluster?id=1",
+							"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/cluster?id=1",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{GIN_HOST}}"
 							],
-							"port": "8000",
+							"port": "{{GIN_PORT}}",
 							"path": [
 								"v1",
 								"kubeasy",
@@ -216,15 +240,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/v1/kubeasy/config?name=kubeasy-dev",
+							"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/config?name=kubeasy-uat",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{GIN_HOST}}"
 							],
-							"port": "8000",
+							"port": "{{GIN_PORT}}",
 							"path": [
 								"v1",
 								"kubeasy",
@@ -233,7 +254,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "kubeasy-dev"
+									"value": "kubeasy-uat"
 								}
 							]
 						}
@@ -298,15 +319,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/v1/kubeasy/config?id=1",
+							"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/config?id=1",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{GIN_HOST}}"
 							],
-							"port": "8000",
+							"port": "{{GIN_PORT}}",
 							"path": [
 								"v1",
 								"kubeasy",
@@ -340,15 +358,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/v1/kubeasy/config",
+							"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/config",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{GIN_HOST}}"
 							],
-							"port": "8000",
+							"port": "{{GIN_PORT}}",
 							"path": [
 								"v1",
 								"kubeasy",
@@ -370,7 +385,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"cluster_id\": 1,\n    \"node\": [\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.16\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        }\n    ]\n}",
+							"raw": "{\n    \"cluster_id\": 2,\n    \"node\": [\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.116.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.116.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.116.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.16\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.16\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -378,15 +393,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/v1/kubeasy/node",
+							"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/node",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{GIN_HOST}}"
 							],
-							"port": "8000",
+							"port": "{{GIN_PORT}}",
 							"path": [
 								"v1",
 								"kubeasy",
@@ -396,13 +408,49 @@
 					},
 					"response": [
 						{
-							"name": "Add",
+							"name": "kubeasy-dev",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n    \"cluster_id\": 1,\n    \"node\": [\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.16\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/v1/kubeasy/node",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"v1",
+										"kubeasy",
+										"node"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "kubeasy-uat",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cluster_id\": 2,\n    \"node\": [\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.116.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.116.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.116.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.16\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        },\n        {\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.16\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"gpu\": false\n        }\n    ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -445,7 +493,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"type\": \"slb\",\n    \"addr\": \"172.16.115.10\",\n    \"mask\": 16,\n    \"cluster_id\": 1\n}",
+							"raw": "{\n    \"type\": \"slb\",\n    \"addr\": \"172.16.116.10\",\n    \"mask\": 16,\n    \"cluster_id\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -453,15 +501,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/v1/kubeasy/vip",
+							"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/vip",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{GIN_HOST}}"
 							],
-							"port": "8000",
+							"port": "{{GIN_PORT}}",
 							"path": [
 								"v1",
 								"kubeasy",
@@ -471,13 +516,49 @@
 					},
 					"response": [
 						{
-							"name": "Add",
+							"name": "kubeasy-dev",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n    \"type\": \"slb\",\n    \"addr\": \"172.16.115.10\",\n    \"mask\": 16,\n    \"cluster_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/v1/kubeasy/vip",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"v1",
+										"kubeasy",
+										"vip"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "kubeasy-uat",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"slb\",\n    \"addr\": \"172.16.116.10\",\n    \"mask\": 16,\n    \"cluster_id\": 2\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -512,12 +593,24 @@
 		},
 		{
 			"name": "deploy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = pm.response.json();",
+							"pm.environment.set(\"TASK_ID\", body.data.task_id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"project\": \"kubeasy\",\n    \"env\": \"dev\",\n    \"version\": \"1.24.7\",\n    \"network\": \"cilium\",\n    \"runtime\": \"containerd\",\n    \"dnsDomain\": \"cluster.local\",\n    \"serviceSubnet\": \"10.96.0.0/12\",\n    \"podSubnet\": \"10.244.0.0/16\",\n    \"vip\": {\n        \"id\": 1,\n        \"type\": \"slb\",\n        \"addr\": \"172.16.115.10\",\n        \"mask\": 16\n    },\n    \"node\": [\n        {\n            \"id\": 1,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 2,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 3,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 4,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 5,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 6,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.16\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 7,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 8,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 9,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 10,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 11,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        }\n    ],\n    \"group_vars\": {\n        \"kubernetes\": {\n            \"docker\": {\n                \"datadir\": \"/var/lib/docker\",\n                \"daemon\": {\n                    \"exec-opts\": [\n                        \"native.cgroupdriver=systemd\"\n                    ],\n                    \"registry-mirrors\": [\n                        \"https://i3jtbyvy.mirror.aliyuncs.com\"\n                    ],\n                    \"storage-driver\": \"overlay2\",\n                    \"storage-opts\": [\n                        \"overlay2.override_kernel_check=true\"\n                    ],\n                    \"log-driver\": \"json-file\",\n                    \"log-opts\": {\n                        \"max-size\": \"100m\",\n                        \"max-file\": \"5\"\n                    },\n                    \"max-concurrent-downloads\": 20,\n                    \"max-concurrent-uploads\": 10,\n                    \"userland-proxy\": false,\n                    \"experimental\": false,\n                    \"icc\": false,\n                    \"debug\": false,\n                    \"features\": {\n                        \"buildkit\": false\n                    },\n                    \"builder\": {\n                        \"gc\": {\n                            \"enabled\": true,\n                            \"defaultKeepStorage\": \"20GB\"\n                        }\n                    },\n                    \"default-ulimits\": {\n                        \"nofile\": {\n                            \"Name\": \"nofile\",\n                            \"Hard\": 65535,\n                            \"Soft\": 65535\n                        },\n                        \"nproc\": {\n                            \"Name\": \"nproc\",\n                            \"Hard\": 65535,\n                            \"Soft\": 65535\n                        },\n                        \"core\": {\n                            \"Name\": \"core\",\n                            \"Hard\": -1,\n                            \"Soft\": -1\n                        }\n                    }\n                }\n            },\n            \"containerd\": {\n                \"datadir\": \"/var/lib/containerd\",\n                \"daemon\": {\n                    \"endpoint\": [\n                        \"https://registry-1.docker.io\",\n                        \"https://i3jtbyvy.mirror.aliyuncs.com\"\n                    ]\n                }\n            },\n            \"etcd\": {\n                \"datadir\": \"/var/lib/etcd\",\n                \"backupDir\": \"/etc/kubernetes/tmp\",\n                \"extraArgs\": [\n                    \"--auto-compaction-retention=1\",\n                    \"--max-request-bytes=33554432\",\n                    \"--quota-backend-bytes=8589934592\",\n                    \"--enable-v2=false\",\n                    \"--snapshot-count=10000\",\n                    \"--cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_256_GCM_SHA384\"\n                ]\n            },\n            \"apiServer\": {\n                \"encryption\": \"Tsg7sO4Ki/W3s9bfwGfTi8ECcp+/3uDedQMq6rLQTIY=\",\n                \"certSANs\": [\n                    \"DNS:*.kubernetes.local\"\n                ],\n                \"extraArgs\": [\n                    \"--event-ttl=4h\",\n                    \"--anonymous-auth=false\",\n                    \"--kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname\",\n                    \"--service-node-port-range=30000-32767\",\n                    \"--runtime-config=api/all=true\",\n                    \"--authorization-mode=Node,RBAC\",\n                    \"--profiling=false\",\n                    \"--enable-admission-plugins=ServiceAccount,NamespaceLifecycle,NodeRestriction,LimitRanger,PersistentVolumeClaimResize,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,Priority\",\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"controllerManager\": {\n                \"extraArgs\": [\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\",\n                    \"--terminated-pod-gc-threshold=12500\",\n                    \"--node-monitor-period=5s\",\n                    \"--node-monitor-grace-period=40s\",\n                    \"--pod-eviction-timeout=5m0s\",\n                    \"--profiling=false\",\n                    \"--kube-api-qps=100\",\n                    \"--kube-api-burst=100\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"scheduler\": {\n                \"extraArgs\": [\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\",\n                    \"--profiling=false\",\n                    \"--kube-api-qps=100\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"kubelet\": {\n                \"extraArgs\": [\n                    \"--anonymous-auth=false\",\n                    \"--authorization-mode=Webhook\",\n                    \"--allowed-unsafe-sysctls=net.*\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"proxy\": {\n                \"extraArgs\": [\n                    \"--proxy-mode=ipvs\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            }\n        },\n        \"all\": {\n            \"timezone\": \"Asia/Shanghai\",\n            \"modprobe\": {\n                \"filename\": \"/etc/modules-load.d/00-k8s.conf\",\n                \"params\": [\n                    \"br_netfilter\",\n                    \"nf_conntrack\",\n                    \"overlay\",\n                    \"xt_REDIRECT\",\n                    \"xt_owner\",\n                    \"ip_tables\",\n                    \"ip6table_filter\"\n                ]\n            },\n            \"ipvs\": {\n                \"filename\": \"/etc/modules-load.d/01-k8s.conf\",\n                \"params\": [\n                    \"ip_vs\",\n                    \"ip_vs_rr\",\n                    \"ip_vs_wrr\",\n                    \"ip_vs_sh\"\n                ]\n            },\n            \"sysctl\": {\n                \"filename\": \"/etc/sysctl.d/100-kubernetes.conf\",\n                \"params\": {\n                    \"net.ipv6.ip_forward\": 1,\n                    \"net.ipv6.conf.all.forwarding\": 1,\n                    \"net.ipv6.conf.all.disable_ipv6\": 0,\n                    \"net.ipv6.conf.default.disable_ipv6\": 0,\n                    \"net.ipv6.conf.lo.disable_ipv6\": 0,\n                    \"net.ipv4.tcp_keepalive_time\": 600,\n                    \"net.ipv4.tcp_keepalive_intvl\": 30,\n                    \"net.ipv4.tcp_keepalive_probes\": 10,\n                    \"net.ipv4.neigh.default.gc_stale_time\": 120,\n                    \"net.ipv4.conf.all.rp_filter\": 0,\n                    \"net.ipv4.conf.default.forwarding\": 1,\n                    \"net.ipv4.conf.default.rp_filter\": 0,\n                    \"net.ipv4.conf.default.arp_announce\": 2,\n                    \"net.ipv4.conf.lo.arp_announce\": 2,\n                    \"net.ipv4.conf.all.arp_announce\": 2,\n                    \"net.ipv4.ip_forward\": 1,\n                    \"net.ipv4.tcp_max_tw_buckets\": 5000,\n                    \"net.ipv4.tcp_syncookies\": 1,\n                    \"net.ipv4.tcp_max_syn_backlog\": 1024,\n                    \"net.ipv4.tcp_synack_retries\": 2,\n                    \"net.bridge.bridge-nf-call-ip6tables\": 1,\n                    \"net.bridge.bridge-nf-call-iptables\": 1,\n                    \"net.bridge.bridge-nf-call-arptables\": 1,\n                    \"net.netfilter.nf_conntrack_max\": 10485760,\n                    \"fs.inotify.max_user_watches\": 524288,\n                    \"fs.may_detach_mounts\": 1,\n                    \"fs.file-max\": 52706963,\n                    \"fs.nr_open\": 52706963,\n                    \"vm.swappiness\": 0,\n                    \"vm.overcommit_memory\": 1,\n                    \"vm.panic_on_oom\": 0,\n                    \"net.netfilter.nf_conntrack_tcp_timeout_established\": 300,\n                    \"net.netfilter.nf_conntrack_tcp_timeout_close_wait\": 3600,\n                    \"net.core.netdev_max_backlog\": 10000,\n                    \"kernel.pid_max\": 65535,\n                    \"net.core.default_qdisc\": \"fq\",\n                    \"net.ipv4.tcp_congestion_control\": \"bbr\",\n                    \"net.ipv4.neigh.default.gc_thresh1\": 1024,\n                    \"net.ipv4.neigh.default.gc_thresh2\": 4096,\n                    \"net.ipv4.neigh.default.gc_thresh3\": 8192,\n                    \"net.netfilter.nf_conntrack_buckets\": 655360,\n                    \"fs.inotify.max_user_instances\": 524288,\n                    \"net.core.rmem_max\": 2500000,\n                    \"vm.max_map_count\": 262144\n                }\n            },\n            \"limits\": [\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": \"unlimited\"\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": \"unlimited\"\n                }\n            ]\n        }\n    }\n}",
+					"raw": "{\n    \"project\": \"kubeasy\",\n    \"env\": \"dev\",\n    \"version\": \"1.14.10\",\n    \"network\": \"flannel\",\n    \"runtime\": \"docker\",\n    \"dnsDomain\": \"cluster.local\",\n    \"serviceSubnet\": \"10.96.0.0/12\",\n    \"podSubnet\": \"10.244.0.0/16\",\n    \"vip\": {\n        \"id\": 1,\n        \"type\": \"slb\",\n        \"addr\": \"172.16.115.10\",\n        \"mask\": 16\n    },\n    \"node\": [\n        {\n            \"id\": 1,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 2,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 3,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 4,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 5,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 6,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.16\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        }\n    ],\n    \"group_vars\": {\n        \"kubernetes\": {\n            \"docker\": {\n                \"datadir\": \"/var/lib/docker\",\n                \"daemon\": {\n                    \"exec-opts\": [\n                        \"native.cgroupdriver=systemd\"\n                    ],\n                    \"registry-mirrors\": [\n                        \"https://i3jtbyvy.mirror.aliyuncs.com\"\n                    ],\n                    \"storage-driver\": \"overlay2\",\n                    \"storage-opts\": [\n                        \"overlay2.override_kernel_check=true\"\n                    ],\n                    \"log-driver\": \"json-file\",\n                    \"log-opts\": {\n                        \"max-size\": \"100m\",\n                        \"max-file\": \"5\"\n                    },\n                    \"max-concurrent-downloads\": 20,\n                    \"max-concurrent-uploads\": 10,\n                    \"userland-proxy\": false,\n                    \"experimental\": false,\n                    \"icc\": false,\n                    \"debug\": false,\n                    \"features\": {\n                        \"buildkit\": false\n                    },\n                    \"builder\": {\n                        \"gc\": {\n                            \"enabled\": true,\n                            \"defaultKeepStorage\": \"20GB\"\n                        }\n                    },\n                    \"default-ulimits\": {\n                        \"nofile\": {\n                            \"Name\": \"nofile\",\n                            \"Hard\": 65535,\n                            \"Soft\": 65535\n                        },\n                        \"nproc\": {\n                            \"Name\": \"nproc\",\n                            \"Hard\": 65535,\n                            \"Soft\": 65535\n                        },\n                        \"core\": {\n                            \"Name\": \"core\",\n                            \"Hard\": -1,\n                            \"Soft\": -1\n                        }\n                    }\n                }\n            },\n            \"containerd\": {\n                \"datadir\": \"/var/lib/containerd\",\n                \"daemon\": {\n                    \"endpoint\": [\n                        \"https://registry-1.docker.io\",\n                        \"https://i3jtbyvy.mirror.aliyuncs.com\"\n                    ]\n                }\n            },\n            \"etcd\": {\n                \"datadir\": \"/var/lib/etcd\",\n                \"backupDir\": \"/etc/kubernetes/tmp\",\n                \"extraArgs\": [\n                    \"--auto-compaction-retention=1\",\n                    \"--max-request-bytes=33554432\",\n                    \"--quota-backend-bytes=8589934592\",\n                    \"--enable-v2=false\",\n                    \"--snapshot-count=10000\",\n                    \"--cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_256_GCM_SHA384\"\n                ]\n            },\n            \"apiServer\": {\n                \"encryption\": \"Tsg7sO4Ki/W3s9bfwGfTi8ECcp+/3uDedQMq6rLQTIY=\",\n                \"certSANs\": [\n                    \"DNS:*.kubernetes.local\"\n                ],\n                \"extraArgs\": [\n                    \"--event-ttl=4h\",\n                    \"--anonymous-auth=false\",\n                    \"--kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname\",\n                    \"--service-node-port-range=30000-32767\",\n                    \"--runtime-config=api/all=true\",\n                    \"--authorization-mode=Node,RBAC\",\n                    \"--profiling=false\",\n                    \"--enable-admission-plugins=ServiceAccount,NamespaceLifecycle,NodeRestriction,LimitRanger,PersistentVolumeClaimResize,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,Priority\",\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"controllerManager\": {\n                \"extraArgs\": [\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\",\n                    \"--terminated-pod-gc-threshold=12500\",\n                    \"--node-monitor-period=5s\",\n                    \"--node-monitor-grace-period=40s\",\n                    \"--pod-eviction-timeout=5m0s\",\n                    \"--profiling=false\",\n                    \"--kube-api-qps=100\",\n                    \"--kube-api-burst=100\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"scheduler\": {\n                \"extraArgs\": [\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\",\n                    \"--profiling=false\",\n                    \"--kube-api-qps=100\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"kubelet\": {\n                \"extraArgs\": [\n                    \"--anonymous-auth=false\",\n                    \"--authorization-mode=Webhook\",\n                    \"--allowed-unsafe-sysctls=net.*\",\n                    \"--network-plugin=cni\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"proxy\": {\n                \"extraArgs\": [\n                    \"--proxy-mode=ipvs\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            }\n        },\n        \"all\": {\n            \"timezone\": \"Asia/Shanghai\",\n            \"modprobe\": {\n                \"filename\": \"/etc/modules-load.d/00-k8s.conf\",\n                \"params\": [\n                    \"br_netfilter\",\n                    \"nf_conntrack\",\n                    \"overlay\",\n                    \"xt_REDIRECT\",\n                    \"xt_owner\",\n                    \"ip_tables\",\n                    \"ip6table_filter\"\n                ]\n            },\n            \"ipvs\": {\n                \"filename\": \"/etc/modules-load.d/01-k8s.conf\",\n                \"params\": [\n                    \"ip_vs\",\n                    \"ip_vs_rr\",\n                    \"ip_vs_wrr\",\n                    \"ip_vs_sh\"\n                ]\n            },\n            \"sysctl\": {\n                \"filename\": \"/etc/sysctl.d/100-kubernetes.conf\",\n                \"params\": {\n                    \"net.ipv6.ip_forward\": 1,\n                    \"net.ipv6.conf.all.forwarding\": 1,\n                    \"net.ipv6.conf.all.disable_ipv6\": 0,\n                    \"net.ipv6.conf.default.disable_ipv6\": 0,\n                    \"net.ipv6.conf.lo.disable_ipv6\": 0,\n                    \"net.ipv4.tcp_keepalive_time\": 600,\n                    \"net.ipv4.tcp_keepalive_intvl\": 30,\n                    \"net.ipv4.tcp_keepalive_probes\": 10,\n                    \"net.ipv4.neigh.default.gc_stale_time\": 120,\n                    \"net.ipv4.conf.all.rp_filter\": 0,\n                    \"net.ipv4.conf.default.forwarding\": 1,\n                    \"net.ipv4.conf.default.rp_filter\": 0,\n                    \"net.ipv4.conf.default.arp_announce\": 2,\n                    \"net.ipv4.conf.lo.arp_announce\": 2,\n                    \"net.ipv4.conf.all.arp_announce\": 2,\n                    \"net.ipv4.ip_forward\": 1,\n                    \"net.ipv4.tcp_max_tw_buckets\": 5000,\n                    \"net.ipv4.tcp_syncookies\": 1,\n                    \"net.ipv4.tcp_max_syn_backlog\": 1024,\n                    \"net.ipv4.tcp_synack_retries\": 2,\n                    \"net.bridge.bridge-nf-call-ip6tables\": 1,\n                    \"net.bridge.bridge-nf-call-iptables\": 1,\n                    \"net.bridge.bridge-nf-call-arptables\": 1,\n                    \"net.netfilter.nf_conntrack_max\": 10485760,\n                    \"fs.inotify.max_user_watches\": 524288,\n                    \"fs.may_detach_mounts\": 1,\n                    \"fs.file-max\": 52706963,\n                    \"fs.nr_open\": 52706963,\n                    \"vm.swappiness\": 0,\n                    \"vm.overcommit_memory\": 1,\n                    \"vm.panic_on_oom\": 0,\n                    \"net.netfilter.nf_conntrack_tcp_timeout_established\": 300,\n                    \"net.netfilter.nf_conntrack_tcp_timeout_close_wait\": 3600,\n                    \"net.core.netdev_max_backlog\": 10000,\n                    \"kernel.pid_max\": 65535,\n                    \"net.core.default_qdisc\": \"fq\",\n                    \"net.ipv4.tcp_congestion_control\": \"bbr\",\n                    \"net.ipv4.neigh.default.gc_thresh1\": 1024,\n                    \"net.ipv4.neigh.default.gc_thresh2\": 4096,\n                    \"net.ipv4.neigh.default.gc_thresh3\": 8192,\n                    \"net.netfilter.nf_conntrack_buckets\": 655360,\n                    \"fs.inotify.max_user_instances\": 524288,\n                    \"net.core.rmem_max\": 2500000,\n                    \"vm.max_map_count\": 262144\n                }\n            },\n            \"limits\": [\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": \"unlimited\"\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": \"unlimited\"\n                }\n            ]\n        }\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -525,15 +618,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/v1/kubeasy/deploy",
+					"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/deploy",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{GIN_HOST}}"
 					],
-					"port": "8000",
+					"port": "{{GIN_PORT}}",
 					"path": [
 						"v1",
 						"kubeasy",
@@ -543,13 +633,49 @@
 			},
 			"response": [
 				{
-					"name": "deploy",
+					"name": "kubeasy-dev",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"project\": \"kubeasy\",\n    \"env\": \"dev\",\n    \"version\": \"1.24.7\",\n    \"network\": \"cilium\",\n    \"runtime\": \"containerd\",\n    \"dnsDomain\": \"cluster.local\",\n    \"serviceSubnet\": \"10.96.0.0/12\",\n    \"podSubnet\": \"10.244.0.0/16\",\n    \"vip\": {\n        \"id\": 1,\n        \"type\": \"slb\",\n        \"addr\": \"172.16.115.10\",\n        \"mask\": 16\n    },\n    \"node\": [\n        {\n            \"id\": 1,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 2,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 3,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 4,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 5,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 6,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.16\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 7,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 8,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 9,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 10,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 11,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        }\n    ],\n    \"group_vars\": {\n        \"kubernetes\": {\n            \"docker\": {\n                \"datadir\": \"/var/lib/docker\",\n                \"daemon\": {\n                    \"exec-opts\": [\n                        \"native.cgroupdriver=systemd\"\n                    ],\n                    \"registry-mirrors\": [\n                        \"https://i3jtbyvy.mirror.aliyuncs.com\"\n                    ],\n                    \"storage-driver\": \"overlay2\",\n                    \"storage-opts\": [\n                        \"overlay2.override_kernel_check=true\"\n                    ],\n                    \"log-driver\": \"json-file\",\n                    \"log-opts\": {\n                        \"max-size\": \"100m\",\n                        \"max-file\": \"5\"\n                    },\n                    \"max-concurrent-downloads\": 20,\n                    \"max-concurrent-uploads\": 10,\n                    \"userland-proxy\": false,\n                    \"experimental\": false,\n                    \"icc\": false,\n                    \"debug\": false,\n                    \"features\": {\n                        \"buildkit\": false\n                    },\n                    \"builder\": {\n                        \"gc\": {\n                            \"enabled\": true,\n                            \"defaultKeepStorage\": \"20GB\"\n                        }\n                    },\n                    \"default-ulimits\": {\n                        \"nofile\": {\n                            \"Name\": \"nofile\",\n                            \"Hard\": 65535,\n                            \"Soft\": 65535\n                        },\n                        \"nproc\": {\n                            \"Name\": \"nproc\",\n                            \"Hard\": 65535,\n                            \"Soft\": 65535\n                        },\n                        \"core\": {\n                            \"Name\": \"core\",\n                            \"Hard\": -1,\n                            \"Soft\": -1\n                        }\n                    }\n                }\n            },\n            \"containerd\": {\n                \"datadir\": \"/var/lib/containerd\",\n                \"daemon\": {\n                    \"endpoint\": [\n                        \"https://registry-1.docker.io\",\n                        \"https://i3jtbyvy.mirror.aliyuncs.com\"\n                    ]\n                }\n            },\n            \"etcd\": {\n                \"datadir\": \"/var/lib/etcd\",\n                \"backupDir\": \"/etc/kubernetes/tmp\",\n                \"extraArgs\": [\n                    \"--auto-compaction-retention=1\",\n                    \"--max-request-bytes=33554432\",\n                    \"--quota-backend-bytes=8589934592\",\n                    \"--enable-v2=false\",\n                    \"--snapshot-count=10000\",\n                    \"--cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_256_GCM_SHA384\"\n                ]\n            },\n            \"apiServer\": {\n                \"encryption\": \"Tsg7sO4Ki/W3s9bfwGfTi8ECcp+/3uDedQMq6rLQTIY=\",\n                \"certSANs\": [\n                    \"DNS:*.kubernetes.local\"\n                ],\n                \"extraArgs\": [\n                    \"--event-ttl=4h\",\n                    \"--anonymous-auth=false\",\n                    \"--kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname\",\n                    \"--service-node-port-range=30000-32767\",\n                    \"--runtime-config=api/all=true\",\n                    \"--authorization-mode=Node,RBAC\",\n                    \"--profiling=false\",\n                    \"--enable-admission-plugins=ServiceAccount,NamespaceLifecycle,NodeRestriction,LimitRanger,PersistentVolumeClaimResize,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,Priority\",\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"controllerManager\": {\n                \"extraArgs\": [\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\",\n                    \"--terminated-pod-gc-threshold=12500\",\n                    \"--node-monitor-period=5s\",\n                    \"--node-monitor-grace-period=40s\",\n                    \"--pod-eviction-timeout=5m0s\",\n                    \"--profiling=false\",\n                    \"--kube-api-qps=100\",\n                    \"--kube-api-burst=100\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"scheduler\": {\n                \"extraArgs\": [\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\",\n                    \"--profiling=false\",\n                    \"--kube-api-qps=100\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"kubelet\": {\n                \"extraArgs\": [\n                    \"--anonymous-auth=false\",\n                    \"--authorization-mode=Webhook\",\n                    \"--allowed-unsafe-sysctls=net.*\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"proxy\": {\n                \"extraArgs\": [\n                    \"--proxy-mode=ipvs\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            }\n        },\n        \"all\": {\n            \"timezone\": \"Asia/Shanghai\",\n            \"modprobe\": {\n                \"filename\": \"/etc/modules-load.d/00-k8s.conf\",\n                \"params\": [\n                    \"br_netfilter\",\n                    \"nf_conntrack\",\n                    \"overlay\",\n                    \"xt_REDIRECT\",\n                    \"xt_owner\",\n                    \"ip_tables\",\n                    \"ip6table_filter\"\n                ]\n            },\n            \"ipvs\": {\n                \"filename\": \"/etc/modules-load.d/01-k8s.conf\",\n                \"params\": [\n                    \"ip_vs\",\n                    \"ip_vs_rr\",\n                    \"ip_vs_wrr\",\n                    \"ip_vs_sh\"\n                ]\n            },\n            \"sysctl\": {\n                \"filename\": \"/etc/sysctl.d/100-kubernetes.conf\",\n                \"params\": {\n                    \"net.ipv6.ip_forward\": 1,\n                    \"net.ipv6.conf.all.forwarding\": 1,\n                    \"net.ipv6.conf.all.disable_ipv6\": 0,\n                    \"net.ipv6.conf.default.disable_ipv6\": 0,\n                    \"net.ipv6.conf.lo.disable_ipv6\": 0,\n                    \"net.ipv4.tcp_keepalive_time\": 600,\n                    \"net.ipv4.tcp_keepalive_intvl\": 30,\n                    \"net.ipv4.tcp_keepalive_probes\": 10,\n                    \"net.ipv4.neigh.default.gc_stale_time\": 120,\n                    \"net.ipv4.conf.all.rp_filter\": 0,\n                    \"net.ipv4.conf.default.forwarding\": 1,\n                    \"net.ipv4.conf.default.rp_filter\": 0,\n                    \"net.ipv4.conf.default.arp_announce\": 2,\n                    \"net.ipv4.conf.lo.arp_announce\": 2,\n                    \"net.ipv4.conf.all.arp_announce\": 2,\n                    \"net.ipv4.ip_forward\": 1,\n                    \"net.ipv4.tcp_max_tw_buckets\": 5000,\n                    \"net.ipv4.tcp_syncookies\": 1,\n                    \"net.ipv4.tcp_max_syn_backlog\": 1024,\n                    \"net.ipv4.tcp_synack_retries\": 2,\n                    \"net.bridge.bridge-nf-call-ip6tables\": 1,\n                    \"net.bridge.bridge-nf-call-iptables\": 1,\n                    \"net.bridge.bridge-nf-call-arptables\": 1,\n                    \"net.netfilter.nf_conntrack_max\": 10485760,\n                    \"fs.inotify.max_user_watches\": 524288,\n                    \"fs.may_detach_mounts\": 1,\n                    \"fs.file-max\": 52706963,\n                    \"fs.nr_open\": 52706963,\n                    \"vm.swappiness\": 0,\n                    \"vm.overcommit_memory\": 1,\n                    \"vm.panic_on_oom\": 0,\n                    \"net.netfilter.nf_conntrack_tcp_timeout_established\": 300,\n                    \"net.netfilter.nf_conntrack_tcp_timeout_close_wait\": 3600,\n                    \"net.core.netdev_max_backlog\": 10000,\n                    \"kernel.pid_max\": 65535,\n                    \"net.core.default_qdisc\": \"fq\",\n                    \"net.ipv4.tcp_congestion_control\": \"bbr\",\n                    \"net.ipv4.neigh.default.gc_thresh1\": 1024,\n                    \"net.ipv4.neigh.default.gc_thresh2\": 4096,\n                    \"net.ipv4.neigh.default.gc_thresh3\": 8192,\n                    \"net.netfilter.nf_conntrack_buckets\": 655360,\n                    \"fs.inotify.max_user_instances\": 524288,\n                    \"net.core.rmem_max\": 2500000,\n                    \"vm.max_map_count\": 262144\n                }\n            },\n            \"limits\": [\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": \"unlimited\"\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": \"unlimited\"\n                }\n            ]\n        }\n    }\n}",
+							"raw": "{\n    \"project\": \"kubeasy\",\n    \"env\": \"dev\",\n    \"version\": \"1.14.10\",\n    \"network\": \"flannel\",\n    \"runtime\": \"docker\",\n    \"dnsDomain\": \"cluster.local\",\n    \"serviceSubnet\": \"10.96.0.0/12\",\n    \"podSubnet\": \"10.244.0.0/16\",\n    \"vip\": {\n        \"id\": 1,\n        \"type\": \"slb\",\n        \"addr\": \"172.16.115.10\",\n        \"mask\": 16\n    },\n    \"node\": [\n        {\n            \"id\": 1,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 2,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 3,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.115.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 4,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 5,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 6,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.115.16\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        }\n    ],\n    \"group_vars\": {\n        \"kubernetes\": {\n            \"docker\": {\n                \"datadir\": \"/var/lib/docker\",\n                \"daemon\": {\n                    \"exec-opts\": [\n                        \"native.cgroupdriver=systemd\"\n                    ],\n                    \"registry-mirrors\": [\n                        \"https://i3jtbyvy.mirror.aliyuncs.com\"\n                    ],\n                    \"storage-driver\": \"overlay2\",\n                    \"storage-opts\": [\n                        \"overlay2.override_kernel_check=true\"\n                    ],\n                    \"log-driver\": \"json-file\",\n                    \"log-opts\": {\n                        \"max-size\": \"100m\",\n                        \"max-file\": \"5\"\n                    },\n                    \"max-concurrent-downloads\": 20,\n                    \"max-concurrent-uploads\": 10,\n                    \"userland-proxy\": false,\n                    \"experimental\": false,\n                    \"icc\": false,\n                    \"debug\": false,\n                    \"features\": {\n                        \"buildkit\": false\n                    },\n                    \"builder\": {\n                        \"gc\": {\n                            \"enabled\": true,\n                            \"defaultKeepStorage\": \"20GB\"\n                        }\n                    },\n                    \"default-ulimits\": {\n                        \"nofile\": {\n                            \"Name\": \"nofile\",\n                            \"Hard\": 65535,\n                            \"Soft\": 65535\n                        },\n                        \"nproc\": {\n                            \"Name\": \"nproc\",\n                            \"Hard\": 65535,\n                            \"Soft\": 65535\n                        },\n                        \"core\": {\n                            \"Name\": \"core\",\n                            \"Hard\": -1,\n                            \"Soft\": -1\n                        }\n                    }\n                }\n            },\n            \"containerd\": {\n                \"datadir\": \"/var/lib/containerd\",\n                \"daemon\": {\n                    \"endpoint\": [\n                        \"https://registry-1.docker.io\",\n                        \"https://i3jtbyvy.mirror.aliyuncs.com\"\n                    ]\n                }\n            },\n            \"etcd\": {\n                \"datadir\": \"/var/lib/etcd\",\n                \"backupDir\": \"/etc/kubernetes/tmp\",\n                \"extraArgs\": [\n                    \"--auto-compaction-retention=1\",\n                    \"--max-request-bytes=33554432\",\n                    \"--quota-backend-bytes=8589934592\",\n                    \"--enable-v2=false\",\n                    \"--snapshot-count=10000\",\n                    \"--cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_256_GCM_SHA384\"\n                ]\n            },\n            \"apiServer\": {\n                \"encryption\": \"Tsg7sO4Ki/W3s9bfwGfTi8ECcp+/3uDedQMq6rLQTIY=\",\n                \"certSANs\": [\n                    \"DNS:*.kubernetes.local\"\n                ],\n                \"extraArgs\": [\n                    \"--event-ttl=4h\",\n                    \"--anonymous-auth=false\",\n                    \"--kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname\",\n                    \"--service-node-port-range=30000-32767\",\n                    \"--runtime-config=api/all=true\",\n                    \"--authorization-mode=Node,RBAC\",\n                    \"--profiling=false\",\n                    \"--enable-admission-plugins=ServiceAccount,NamespaceLifecycle,NodeRestriction,LimitRanger,PersistentVolumeClaimResize,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,Priority\",\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"controllerManager\": {\n                \"extraArgs\": [\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\",\n                    \"--terminated-pod-gc-threshold=12500\",\n                    \"--node-monitor-period=5s\",\n                    \"--node-monitor-grace-period=40s\",\n                    \"--pod-eviction-timeout=5m0s\",\n                    \"--profiling=false\",\n                    \"--kube-api-qps=100\",\n                    \"--kube-api-burst=100\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"scheduler\": {\n                \"extraArgs\": [\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\",\n                    \"--profiling=false\",\n                    \"--kube-api-qps=100\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"kubelet\": {\n                \"extraArgs\": [\n                    \"--anonymous-auth=false\",\n                    \"--authorization-mode=Webhook\",\n                    \"--allowed-unsafe-sysctls=net.*\",\n                    \"--network-plugin=cni\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"proxy\": {\n                \"extraArgs\": [\n                    \"--proxy-mode=ipvs\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            }\n        },\n        \"all\": {\n            \"timezone\": \"Asia/Shanghai\",\n            \"modprobe\": {\n                \"filename\": \"/etc/modules-load.d/00-k8s.conf\",\n                \"params\": [\n                    \"br_netfilter\",\n                    \"nf_conntrack\",\n                    \"overlay\",\n                    \"xt_REDIRECT\",\n                    \"xt_owner\",\n                    \"ip_tables\",\n                    \"ip6table_filter\"\n                ]\n            },\n            \"ipvs\": {\n                \"filename\": \"/etc/modules-load.d/01-k8s.conf\",\n                \"params\": [\n                    \"ip_vs\",\n                    \"ip_vs_rr\",\n                    \"ip_vs_wrr\",\n                    \"ip_vs_sh\"\n                ]\n            },\n            \"sysctl\": {\n                \"filename\": \"/etc/sysctl.d/100-kubernetes.conf\",\n                \"params\": {\n                    \"net.ipv6.ip_forward\": 1,\n                    \"net.ipv6.conf.all.forwarding\": 1,\n                    \"net.ipv6.conf.all.disable_ipv6\": 0,\n                    \"net.ipv6.conf.default.disable_ipv6\": 0,\n                    \"net.ipv6.conf.lo.disable_ipv6\": 0,\n                    \"net.ipv4.tcp_keepalive_time\": 600,\n                    \"net.ipv4.tcp_keepalive_intvl\": 30,\n                    \"net.ipv4.tcp_keepalive_probes\": 10,\n                    \"net.ipv4.neigh.default.gc_stale_time\": 120,\n                    \"net.ipv4.conf.all.rp_filter\": 0,\n                    \"net.ipv4.conf.default.forwarding\": 1,\n                    \"net.ipv4.conf.default.rp_filter\": 0,\n                    \"net.ipv4.conf.default.arp_announce\": 2,\n                    \"net.ipv4.conf.lo.arp_announce\": 2,\n                    \"net.ipv4.conf.all.arp_announce\": 2,\n                    \"net.ipv4.ip_forward\": 1,\n                    \"net.ipv4.tcp_max_tw_buckets\": 5000,\n                    \"net.ipv4.tcp_syncookies\": 1,\n                    \"net.ipv4.tcp_max_syn_backlog\": 1024,\n                    \"net.ipv4.tcp_synack_retries\": 2,\n                    \"net.bridge.bridge-nf-call-ip6tables\": 1,\n                    \"net.bridge.bridge-nf-call-iptables\": 1,\n                    \"net.bridge.bridge-nf-call-arptables\": 1,\n                    \"net.netfilter.nf_conntrack_max\": 10485760,\n                    \"fs.inotify.max_user_watches\": 524288,\n                    \"fs.may_detach_mounts\": 1,\n                    \"fs.file-max\": 52706963,\n                    \"fs.nr_open\": 52706963,\n                    \"vm.swappiness\": 0,\n                    \"vm.overcommit_memory\": 1,\n                    \"vm.panic_on_oom\": 0,\n                    \"net.netfilter.nf_conntrack_tcp_timeout_established\": 300,\n                    \"net.netfilter.nf_conntrack_tcp_timeout_close_wait\": 3600,\n                    \"net.core.netdev_max_backlog\": 10000,\n                    \"kernel.pid_max\": 65535,\n                    \"net.core.default_qdisc\": \"fq\",\n                    \"net.ipv4.tcp_congestion_control\": \"bbr\",\n                    \"net.ipv4.neigh.default.gc_thresh1\": 1024,\n                    \"net.ipv4.neigh.default.gc_thresh2\": 4096,\n                    \"net.ipv4.neigh.default.gc_thresh3\": 8192,\n                    \"net.netfilter.nf_conntrack_buckets\": 655360,\n                    \"fs.inotify.max_user_instances\": 524288,\n                    \"net.core.rmem_max\": 2500000,\n                    \"vm.max_map_count\": 262144\n                }\n            },\n            \"limits\": [\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": \"unlimited\"\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": \"unlimited\"\n                }\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/v1/kubeasy/deploy",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"kubeasy",
+								"deploy"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "kubeasy-uat",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"project\": \"kubeasy\",\n    \"env\": \"uat\",\n    \"version\": \"1.24.7\",\n    \"network\": \"cilium\",\n    \"runtime\": \"containerd\",\n    \"dnsDomain\": \"cluster.local\",\n    \"serviceSubnet\": \"10.96.0.0/12\",\n    \"podSubnet\": \"10.244.0.0/16\",\n    \"vip\": {\n        \"id\": 1,\n        \"type\": \"slb\",\n        \"addr\": \"172.16.116.10\",\n        \"mask\": 16\n    },\n    \"node\": [\n        {\n            \"id\": 1,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.116.11\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 2,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.116.12\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 3,\n            \"role\": \"master\",\n            \"ipv4Addr\": \"172.16.116.13\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 4,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.14\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 5,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.15\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        },\n        {\n            \"id\": 6,\n            \"role\": \"worker\",\n            \"ipv4Addr\": \"172.16.116.16\",\n            \"ipv6Addr\": \"\",\n            \"ansible_ssh_port\": 22,\n            \"ansible_ssh_user\": \"root\",\n            \"ansible_ssh_pass\": \"root\",\n            \"ansible_sudo_user\": \"\",\n            \"ansible_sudo_pass\": \"\",\n            \"gpu\": false,\n            \"cluster_id\": 1\n        }\n    ],\n    \"group_vars\": {\n        \"kubernetes\": {\n            \"docker\": {\n                \"datadir\": \"/var/lib/docker\",\n                \"daemon\": {\n                    \"exec-opts\": [\n                        \"native.cgroupdriver=systemd\"\n                    ],\n                    \"registry-mirrors\": [\n                        \"https://i3jtbyvy.mirror.aliyuncs.com\"\n                    ],\n                    \"storage-driver\": \"overlay2\",\n                    \"storage-opts\": [\n                        \"overlay2.override_kernel_check=true\"\n                    ],\n                    \"log-driver\": \"json-file\",\n                    \"log-opts\": {\n                        \"max-size\": \"100m\",\n                        \"max-file\": \"5\"\n                    },\n                    \"max-concurrent-downloads\": 20,\n                    \"max-concurrent-uploads\": 10,\n                    \"userland-proxy\": false,\n                    \"experimental\": false,\n                    \"icc\": false,\n                    \"debug\": false,\n                    \"features\": {\n                        \"buildkit\": false\n                    },\n                    \"builder\": {\n                        \"gc\": {\n                            \"enabled\": true,\n                            \"defaultKeepStorage\": \"20GB\"\n                        }\n                    },\n                    \"default-ulimits\": {\n                        \"nofile\": {\n                            \"Name\": \"nofile\",\n                            \"Hard\": 65535,\n                            \"Soft\": 65535\n                        },\n                        \"nproc\": {\n                            \"Name\": \"nproc\",\n                            \"Hard\": 65535,\n                            \"Soft\": 65535\n                        },\n                        \"core\": {\n                            \"Name\": \"core\",\n                            \"Hard\": -1,\n                            \"Soft\": -1\n                        }\n                    }\n                }\n            },\n            \"containerd\": {\n                \"datadir\": \"/var/lib/containerd\",\n                \"daemon\": {\n                    \"endpoint\": [\n                        \"https://registry-1.docker.io\",\n                        \"https://i3jtbyvy.mirror.aliyuncs.com\"\n                    ]\n                }\n            },\n            \"etcd\": {\n                \"datadir\": \"/var/lib/etcd\",\n                \"backupDir\": \"/etc/kubernetes/tmp\",\n                \"extraArgs\": [\n                    \"--auto-compaction-retention=1\",\n                    \"--max-request-bytes=33554432\",\n                    \"--quota-backend-bytes=8589934592\",\n                    \"--enable-v2=false\",\n                    \"--snapshot-count=10000\",\n                    \"--cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_256_GCM_SHA384\"\n                ]\n            },\n            \"apiServer\": {\n                \"encryption\": \"Tsg7sO4Ki/W3s9bfwGfTi8ECcp+/3uDedQMq6rLQTIY=\",\n                \"certSANs\": [\n                    \"DNS:*.kubernetes.local\"\n                ],\n                \"extraArgs\": [\n                    \"--event-ttl=4h\",\n                    \"--anonymous-auth=false\",\n                    \"--kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname\",\n                    \"--service-node-port-range=30000-32767\",\n                    \"--runtime-config=api/all=true\",\n                    \"--authorization-mode=Node,RBAC\",\n                    \"--profiling=false\",\n                    \"--enable-admission-plugins=ServiceAccount,NamespaceLifecycle,NodeRestriction,LimitRanger,PersistentVolumeClaimResize,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,Priority\",\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"controllerManager\": {\n                \"extraArgs\": [\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\",\n                    \"--terminated-pod-gc-threshold=12500\",\n                    \"--node-monitor-period=5s\",\n                    \"--node-monitor-grace-period=40s\",\n                    \"--pod-eviction-timeout=5m0s\",\n                    \"--profiling=false\",\n                    \"--kube-api-qps=100\",\n                    \"--kube-api-burst=100\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"scheduler\": {\n                \"extraArgs\": [\n                    \"--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\",\n                    \"--profiling=false\",\n                    \"--kube-api-qps=100\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"kubelet\": {\n                \"extraArgs\": [\n                    \"--anonymous-auth=false\",\n                    \"--authorization-mode=Webhook\",\n                    \"--allowed-unsafe-sysctls=net.*\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            },\n            \"proxy\": {\n                \"extraArgs\": [\n                    \"--proxy-mode=ipvs\"\n                ],\n                \"log\": {\n                    \"level\": 1\n                }\n            }\n        },\n        \"all\": {\n            \"timezone\": \"Asia/Shanghai\",\n            \"modprobe\": {\n                \"filename\": \"/etc/modules-load.d/00-k8s.conf\",\n                \"params\": [\n                    \"br_netfilter\",\n                    \"nf_conntrack\",\n                    \"overlay\",\n                    \"xt_REDIRECT\",\n                    \"xt_owner\",\n                    \"ip_tables\",\n                    \"ip6table_filter\"\n                ]\n            },\n            \"ipvs\": {\n                \"filename\": \"/etc/modules-load.d/01-k8s.conf\",\n                \"params\": [\n                    \"ip_vs\",\n                    \"ip_vs_rr\",\n                    \"ip_vs_wrr\",\n                    \"ip_vs_sh\"\n                ]\n            },\n            \"sysctl\": {\n                \"filename\": \"/etc/sysctl.d/100-kubernetes.conf\",\n                \"params\": {\n                    \"net.ipv6.ip_forward\": 1,\n                    \"net.ipv6.conf.all.forwarding\": 1,\n                    \"net.ipv6.conf.all.disable_ipv6\": 0,\n                    \"net.ipv6.conf.default.disable_ipv6\": 0,\n                    \"net.ipv6.conf.lo.disable_ipv6\": 0,\n                    \"net.ipv4.tcp_keepalive_time\": 600,\n                    \"net.ipv4.tcp_keepalive_intvl\": 30,\n                    \"net.ipv4.tcp_keepalive_probes\": 10,\n                    \"net.ipv4.neigh.default.gc_stale_time\": 120,\n                    \"net.ipv4.conf.all.rp_filter\": 0,\n                    \"net.ipv4.conf.default.forwarding\": 1,\n                    \"net.ipv4.conf.default.rp_filter\": 0,\n                    \"net.ipv4.conf.default.arp_announce\": 2,\n                    \"net.ipv4.conf.lo.arp_announce\": 2,\n                    \"net.ipv4.conf.all.arp_announce\": 2,\n                    \"net.ipv4.ip_forward\": 1,\n                    \"net.ipv4.tcp_max_tw_buckets\": 5000,\n                    \"net.ipv4.tcp_syncookies\": 1,\n                    \"net.ipv4.tcp_max_syn_backlog\": 1024,\n                    \"net.ipv4.tcp_synack_retries\": 2,\n                    \"net.bridge.bridge-nf-call-ip6tables\": 1,\n                    \"net.bridge.bridge-nf-call-iptables\": 1,\n                    \"net.bridge.bridge-nf-call-arptables\": 1,\n                    \"net.netfilter.nf_conntrack_max\": 10485760,\n                    \"fs.inotify.max_user_watches\": 524288,\n                    \"fs.may_detach_mounts\": 1,\n                    \"fs.file-max\": 52706963,\n                    \"fs.nr_open\": 52706963,\n                    \"vm.swappiness\": 0,\n                    \"vm.overcommit_memory\": 1,\n                    \"vm.panic_on_oom\": 0,\n                    \"net.netfilter.nf_conntrack_tcp_timeout_established\": 300,\n                    \"net.netfilter.nf_conntrack_tcp_timeout_close_wait\": 3600,\n                    \"net.core.netdev_max_backlog\": 10000,\n                    \"kernel.pid_max\": 65535,\n                    \"net.core.default_qdisc\": \"fq\",\n                    \"net.ipv4.tcp_congestion_control\": \"bbr\",\n                    \"net.ipv4.neigh.default.gc_thresh1\": 1024,\n                    \"net.ipv4.neigh.default.gc_thresh2\": 4096,\n                    \"net.ipv4.neigh.default.gc_thresh3\": 8192,\n                    \"net.netfilter.nf_conntrack_buckets\": 655360,\n                    \"fs.inotify.max_user_instances\": 524288,\n                    \"net.core.rmem_max\": 2500000,\n                    \"vm.max_map_count\": 262144\n                }\n            },\n            \"limits\": [\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"*\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nofile\",\n                    \"value\": 65536\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"soft\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": \"unlimited\"\n                },\n                {\n                    \"domain\": \"root\",\n                    \"limit_type\": \"hard\",\n                    \"limit_item\": \"nproc\",\n                    \"value\": \"unlimited\"\n                }\n            ]\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -586,15 +712,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/v1/kubeasy/task",
+					"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/task",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{GIN_HOST}}"
 					],
-					"port": "8000",
+					"port": "{{GIN_PORT}}",
 					"path": [
 						"v1",
 						"kubeasy",
@@ -622,15 +745,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/v1/kubeasy/task/status?id=f0f535b5-7ec6-4732-bc16-b7bf4e982137",
+					"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/task/status?id={{TASK_ID}}",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{GIN_HOST}}"
 					],
-					"port": "8000",
+					"port": "{{GIN_PORT}}",
 					"path": [
 						"v1",
 						"kubeasy",
@@ -640,7 +760,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "f0f535b5-7ec6-4732-bc16-b7bf4e982137"
+							"value": "{{TASK_ID}}"
 						}
 					]
 				}
@@ -653,15 +773,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/v1/kubeasy/task/log?id=f0f535b5-7ec6-4732-bc16-b7bf4e982137",
+					"raw": "http://{{GIN_HOST}}:{{GIN_PORT}}/v1/kubeasy/task/log?id={{TASK_ID}}",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{GIN_HOST}}"
 					],
-					"port": "8000",
+					"port": "{{GIN_PORT}}",
 					"path": [
 						"v1",
 						"kubeasy",
@@ -671,7 +788,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "f0f535b5-7ec6-4732-bc16-b7bf4e982137"
+							"value": "{{TASK_ID}}"
 						}
 					]
 				}
