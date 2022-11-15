@@ -78,7 +78,7 @@ services:
             - BROKER_URL=redis://redis:6379/0
             - BACKEND_URL=redis://redis:6379/0
             - KUBEASY_URL=https://github.com/buxiaomo/kubeasy.git
-            - NEXUS_DOMAIN_NAME=http://172.16.2.11:8000
+            - NEXUS_DOMAIN_NAME=http://172.16.2.11:8081
             - NEXUS_REPOSITORY=kubeasy
         logging:
             driver: json-file
