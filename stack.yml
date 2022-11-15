@@ -63,7 +63,8 @@ services:
         networks:
             kubeasy:
         volumes:
-            - ./data/worker:/etc/ssl/kubernetes
+            - ./data/worker/ssl:/etc/ssl/kubernetes
+            - ./data/worker/logs:/app/logs
             - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
         deploy:
             mode: replicated
@@ -80,6 +81,8 @@ services:
             - KUBEASY_URL=https://github.com/buxiaomo/kubeasy.git
             - NEXUS_DOMAIN_NAME=http://172.16.2.11:8081
             - NEXUS_REPOSITORY=kubeasy
+            - NEXUS_USERNAME=admin
+            - NEXUS_PASSWORD=admin
         logging:
             driver: json-file
             options:
