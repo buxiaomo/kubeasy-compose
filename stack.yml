@@ -79,6 +79,7 @@ services:
             - BROKER_URL=redis://redis:6379/0
             - BACKEND_URL=redis://redis:6379/0
             - KUBEASY_URL=https://github.com/buxiaomo/kubeasy.git
+            - REGISTRY_URL=https://172.16.2.11/infra
             - NEXUS_DOMAIN_NAME=http://172.16.2.11:8081
             - NEXUS_REPOSITORY=kubeasy
             - NEXUS_USERNAME=admin
