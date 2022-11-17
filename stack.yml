@@ -58,6 +58,35 @@ services:
                 max-file: "3"
                 max-size: 100m
 
+    registry:
+        image: registry:2.8.1
+        networks:
+            kubeasy:
+        ports:
+            - 5000:5000/tcp
+        volumes:
+            - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
+            - ./data/registry:/var/lib/registry
+        deploy:
+            mode: replicated
+            replicas: 1
+            update_config:
+                order: stop-first
+                parallelism: 1
+                delay: 10s
+        environment:
+            - TZ=Asia/Shanghai
+        healthcheck:
+            test: ["CMD-SHELL", "redis-cli ping || exit 1"]
+            interval: 10s
+            timeout: 5s
+            retries: 3
+        logging:
+            driver: json-file
+            options:
+                max-file: "3"
+                max-size: 100m
+
     worker:
         image: docker.io/buxiaomo/kubeasy-worker:1.0-alpine
         networks:

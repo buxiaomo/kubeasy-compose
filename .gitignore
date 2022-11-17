@@ -2,7 +2,6 @@
 .DS_Store
 .idea
 __pycache__
-data/worker/*
 data/redis/*
 data/mysql/*
 data/artifact/*
