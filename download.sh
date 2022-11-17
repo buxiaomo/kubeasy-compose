@@ -20,5 +20,5 @@ do
     wget https://github.com/buxiaomo/kubeasy-artifact/releases/download/${tag}/kubeasy-artifact-${tag}.tar.gz -O ./src/kubeasy-artifact-${tag}.tar.gz
     tar -zxf ./src/kubeasy-artifact-${tag}.tar.gz -C ./data/artifact
     wget https://github.com/buxiaomo/kubeasy/releases/download/${tag}/kubeasy-registry-${tag}.tar.gz -O ./src/kubeasy-registry-${tag}.tar.gz
-    tar -zxf ./src/kubeasy-artifact-${tag}.tar.gz -C ./data/registry
+    tar -zxf ./src/kubeasy-registry-${tag}.tar.gz -C ./data/registry
 done

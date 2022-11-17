@@ -7,7 +7,7 @@ cd /usr/local/kubeasy-compose
 curl -fsSL https://get.docker.com | sh
 docker swarm init
 docker network create --driver overlay kubeasy
-mkdir -p ./data/mysql ./data/redis ./data/artifact ./data/worker ./data/rabbitmq
+mkdir -p ./data/mysql ./data/redis ./data/artifact ./data/worker/ssl ./data/worker/logs
 docker stack deploy -c stack.yml kubeasy --with-registry-auth
 
 # download artifact package
