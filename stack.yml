@@ -76,11 +76,6 @@ services:
                 delay: 10s
         environment:
             - TZ=Asia/Shanghai
-        healthcheck:
-            test: ["CMD-SHELL", "redis-cli ping || exit 1"]
-            interval: 10s
-            timeout: 5s
-            retries: 3
         logging:
             driver: json-file
             options:
