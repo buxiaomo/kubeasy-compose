@@ -98,6 +98,8 @@ services:
         environment:
             - TZ=Asia/Shanghai
             - ANSIBLE_NOCOLOR=True
+            - ANSIBLE_ANY_ERRORS_FATAL=True
+            - ANSIBLE_PIPELINING=True
             - BROKER_URL=redis://redis:6379/0
             - BACKEND_URL=redis://redis:6379/0
             - KUBEASY_URL=https://github.com/buxiaomo/kubeasy.git
