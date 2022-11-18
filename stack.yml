@@ -62,8 +62,6 @@ services:
         image: registry:2.8.1
         networks:
             kubeasy:
-        ports:
-            - 5000:5000/tcp
         volumes:
             - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
             - ./data/registry:/var/lib/registry
@@ -103,8 +101,8 @@ services:
             - BROKER_URL=redis://redis:6379/0
             - BACKEND_URL=redis://redis:6379/0
             - KUBEASY_URL=https://github.com/buxiaomo/kubeasy.git
-            - REGISTRY_URL=http://172.16.2.11:5000
-            - NEXUS_DOMAIN_NAME=http://172.16.2.11:8081
+            - REGISTRY_URL=http://172.16.2.11:8000
+            - NEXUS_DOMAIN_NAME=http://172.16.2.11:8000
             - NEXUS_REPOSITORY=kubeasy
             - NEXUS_USERNAME=admin
             - NEXUS_PASSWORD=admin
