@@ -86,7 +86,7 @@ services:
             kubeasy:
         volumes:
             - ./data/worker/ssl:/etc/ssl/kubernetes
-            - ./data/worker/logs:/app/logs
+            - ./data/worker/logs:/var/log/kubeasy
             - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
         deploy:
             mode: replicated
