@@ -1,34 +1,5 @@
 version: "3.8"
 services:
-    mysql:
-        image: mysql:5.7.20
-        networks:
-            kubeasy:
-        ports:
-            - 3306:3306/tcp
-        environment:
-            - MYSQL_ROOT_PASSWORD=root
-            - MYSQL_DATABASE=kubeasy
-            - MYSQL_USER=kubeasy
-            - MYSQL_PASSWORD=kubeasy
-        configs:
-            - source: mysql
-              target: /etc/mysql/mysql.conf.d/mysqld.cnf
-        volumes:
-            - ./data/mysql:/var/lib/mysql
-        deploy:
-            mode: replicated
-            replicas: 1
-            update_config:
-                order: stop-first
-                parallelism: 1
-                delay: 10s
-        logging:
-            driver: json-file
-            options:
-                max-file: "3"
-                max-size: 100m
-
     redis:
         image: redis:7.0.5-alpine
         networks:
@@ -129,8 +100,6 @@ services:
                 delay: 10s
         environment:
             - TZ=Asia/Shanghai
-            - DB_TYPE=mysql
-            - DB_URL=kubeasy:kubeasy@tcp(mysql:3306)/kubeasy?charset=utf8mb4&parseTime=True&loc=Local
             - BROKER_URL=redis://redis:6379/0
             - BACKEND_URL=redis://redis:6379/0
         logging:
@@ -186,8 +155,6 @@ services:
                 max-size: 100m
 
 configs:
-    mysql:
-        file: ./conf/mysqld.cnf
     nginx:
         file: ./conf/nginx.cnf
 
